@@ -1,12 +1,9 @@
 ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="rbates"
-DISABLE_AUTO_UPDATE="true"
-DISABLE_LS_COLORS="true"
+ZSH_THEME="blinks"
 
-plugins=(git bundler brew gem rbates)
+plugins=(git git-extras github brew brew-cast gem jump zsh_reload)
 
 export PATH="/usr/local/bin:$PATH"
-export EDITOR='mate -w'
 
 source $ZSH/oh-my-zsh.sh
 
