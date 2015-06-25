@@ -35,3 +35,4 @@ brew cask install welly
 # Command line tools
 brew install git-extras
 brew install hub
+brew install imagemagick

@@ -13,3 +13,11 @@ if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
 
 export CLICOLOR=1
 export LSCOLORS=gxBxhxDxfxhxhxhxhxcxcx
+
+func rmAppCode (){
+  rm -rf ~/Library/Caches/appCode31/*
+}
+
+func rmXcode () {
+  rm -rf ~/Library/Developer/Xcode/DerivedData/*
+}
