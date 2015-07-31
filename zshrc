@@ -2,7 +2,7 @@ ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="agnoster"
 DEFAULT_USER="erh-li.shen"
 
-plugins=(git git-extras github brew brew-cask gem jump zsh_reload)
+plugins=(git git-extras brew brew-cask gem jump zsh_reload last-working-dir)
 
 export PATH="/usr/local/bin:$PATH"
 
@@ -22,7 +22,7 @@ func rmXcode () {
   rm -rf ~/Library/Developer/Xcode/DerivedData/*
 }
 
-source ~/.workday/clear_build_caches.sh
+source ~/.workday/source/*.sh
 
 func gitRemoteBranch() {
   git for-each-ref --format='%(upstream:short)' $(git symbolic-ref -q HEAD)
