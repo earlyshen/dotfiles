@@ -1,0 +1,16 @@
+[core]
+	excludesfile = /Users/erh-li.shen/.gitignore_global
+	editor = vim
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[user]
+	name = Erh-Li Shen
+	email = erh-li.shen@workday.com
+[push]
+	default = current
+[hub]
+	host = ghe.megaleo.com
