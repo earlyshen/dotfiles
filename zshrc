@@ -45,7 +45,7 @@ ZSH_THEME="agnoster"
 # HIST_STAMPS="mm/dd/yyyy"
 
 # Would you like to use another custom folder than $ZSH/custom?
-# ZSH_CUSTOM=/path/to/new-custom-folder
+ZSH_CUSTOM=~/.dotfiles/oh-my-zsh/custom
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -68,6 +68,8 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+
+export EDITOR='vim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -163,10 +165,27 @@ func gitUpdatebases() {
     done
 }
 
+func switchXcode(){
+  oldXcode=/Applications/Xcode_8.app
+  newXcode=/Applications/Xcode.app
+
+  current=`xcode-select -p`
+  if [[ $current =~ ^$oldXcode ]]; then
+    current="$newXcode"
+  else
+    current="$oldXcode"
+  fi
+  sudo xcode-select -s $current
+  echo "Switch to $current"
+}
+
 alias tsint="devPassword -e tsinternal"
 alias tsprod="devPassword -e tsprod"
 
-alias bootstrap="carthage bootstrap --platform ios --no-build"
-alias build="carthage build --platform ios"
+alias bootstrap="carthage bootstrap --platform ios --cache-builds"
+alias build="carthage build --platform ios --cache-builds"
+
+alias showFiles='defaults write com.apple.finder AppleShowAllFiles YES; killall Finder /System/Library/CoreServices/Finder.app'
+alias hideFiles='defaults write com.apple.finder AppleShowAllFiles NO; killall Finder /System/Library/CoreServices/Finder.app'
 
 #test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
